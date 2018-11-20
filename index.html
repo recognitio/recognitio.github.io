@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="Aaron Yeoh Cruz">
+
+	<title>recognitio</title>
+
+	<!-- Bootstrapping CSS -->
+	<link href="styles/bootstrap.min.css" rel="stylesheet">
+	<link href="styles/recognitio.css" rel="stylesheet">
+</head>
+
+<body>
+	<script src="scripts/jquery-3.3.1.slim.min.js" defer></script>
+	<script src="scripts/popper.min.js" defer></script>
+	<script src="scripts/bootstrap.min.js" defer></script>
+
+	<script src="scripts/js-levenshtein/index.js" defer></script>
+	<script src="scripts/recognitio.js" defer></script>
+	<script src="scripts/main.js" defer></script>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card mt-3">
+					<h6 class="card-header">Timer</h6>
+					<div class="card-body">
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<div class="" style="display: block; float: right;">
+									<span class="timer" style="font-size: 24pt;" id="quotient">60</span><!--
+									--><span class="timer" style="font-size: 24pt;">.</span><!--
+									--><span class="timer" style="font-size: 16pt;" id="remainder">4</span>
+									
+									<span style="font-size: 16pt;">s</span>
+								</div>
+							</li>
+							<li class="nav-item">
+								<div class="input-group-prepend" style="display: flex; align-items: center;">
+									<span class="input-group-text text-std rounded-left-only">Speed</span>
+									<input type="range" class="form-control-range" id="speed-range" min="0" max="350" step="25">
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card mt-3">
+					<h6 class="card-header">Stats</h6>
+					<div class="card-body">
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<span class="nav-link text-std" id="ngets">Gets</span>
+							</li>
+							<li class="nav-item">
+								<span class="nav-link disabled text-std" id="nnegs">Negs</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card mt-3">
+					<h6 class="card-header">Prefs</h6>
+					<div class="card-body">
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<div class="input-group">
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" id="ontology-file-input">
+										<label class="custom-file-label text-std crop" for="ontology-file-input" id="ontology-file-label">ontology: none</label>
+										
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md" id="main">
+				<div class="row">
+					<div class="col bg-darker">
+						<div class="input-group mt-3 mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text border-0 text-light text-std" id="mode"></span>
+							</div>
+							<input class="form-control border-0 bg-dark text-light text-std" placeholder="" autocomplete="off" type="text" id="textbar">
+							<div class="input-group-append dropdown">
+								<button class="btn btn-outline-primary bg-dark dropdown-toggle text-std" type="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false" id="dropdownMenu2">
+									actions
+								</button>
+								<div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenu2">
+									<button class="dropdown-item bg-dark text-light text-std" type="button" id="dropdown-button-pref">
+										preferences
+										<span class="badge badge-light" style="float: right">P</span>
+									</button>
+									<button class="dropdown-item bg-dark text-light text-std" type="button" id="dropdown-button-chat">
+										chat
+										<span class="badge badge-light" style="float: right">Y</span>
+									</button>
+									<button class="dropdown-item bg-dark text-light text-std" type="button" id="dropdown-button-buzz">
+										buzz
+										<span class="badge badge-light" style="float: right">␣</span>
+									</button>
+									<button class="dropdown-item bg-dark text-light text-std" type="button" id="dropdown-button-next">
+										next question
+										<span class="badge badge-light" style="float: right">N</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col history">
+						<div class="card bg-dark nil mb-3 " id="quest">
+							<div class="card-header text-std text-greyer">
+								<div class="progress text-std bg-secondary" style="height: 1.5em;">
+									<div class="progress-bar bg-primary" style="width: 100%; transition: none;" id="time-bar"></div>
+								</div>
+							</div>
+							<div class="card-body text-std text-greyer nil current" id="question"></div>
+						</div>
+						<div id="history"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="virtual">
+		<span id="let"></span>
+	</div>
+</body>

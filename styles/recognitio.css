@@ -1,0 +1,94 @@
+body
+{
+    background-color: #1E1E1E;
+    height: 100vh;
+    overflow: hidden;
+}
+
+span{
+	border-width: 2px;
+	border-color: #EE0000;
+}
+
+.custom-file-input
+{
+	height: calc(2.25em + 2px) !important;
+}
+
+.rounded-left-only
+{
+	border-top-left-radius: .25rem !important;
+	border-bottom-left-radius: .25rem !important;
+	border-top-right-radius: 0rem !important;
+    border-bottom-right-radius: 0rem !important;
+}
+
+.form-control
+{
+	height: calc(2.25em + 2px) !important;
+}
+
+.virtual
+{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.current
+{
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 10;
+	bottom: 0;
+	overflow: hidden;
+}
+
+.unknown
+{
+	
+}
+
+.blk
+{
+	display: block;
+}
+
+.nil
+{
+	display: none;
+}
+
+.timer
+{
+	font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+.crop
+{
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.text-std
+{
+	font-size: 16px; /*use 14px when you fix the issue with bootstrap*/
+}
+
+.bg-darker
+{
+	background-color: #1E1E1E;
+}
+
+.text-greyer
+{
+	color: #D2D2C8;
+}
+
+.history
+{	
+	position: relative;
+	height: calc(100vh - 5rem);
+	overflow-y: scroll;
+}
