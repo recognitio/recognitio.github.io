@@ -103,13 +103,13 @@ function try_buzz ()
 
 function try_chat ()
 {
-	switch (state)
+	/*switch (state)
 	{
 		case "none":
 			from_none(); into_chat();
 			return true;
 		break;
-	}
+	}*/
 
 	return false;
 }
@@ -360,6 +360,25 @@ $("#dropdown-button-buzz").click
 	{
 		try_buzz();
 		$("#textbar").focus();
+	}
+);
+
+$("#dropdown-button-next").click
+(
+	function ()
+	{
+		try_reading();
+	}
+);
+
+$("#dropdown-button-reset").click
+(
+	function ()
+	{
+		gets = 0;
+		negs = 0;
+		$("#ngets").text("Gets");
+		$("#nnegs").text("Negs");
 	}
 );
 
